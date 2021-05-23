@@ -3,6 +3,7 @@ package javainternship.uzduotis.Controllers;
 import javainternship.uzduotis.Objects.User;
 import javainternship.uzduotis.services.BookService;
 import javainternship.uzduotis.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -12,7 +13,9 @@ import java.util.List;
 @RequestMapping(UserController.BASE_URL)
 public class UserController {
     public static final  String BASE_URL = "/api/user";
+    @Autowired
     private final UserService userService;
+    @Autowired
     private  BookService bookService;
 
 

@@ -2,6 +2,7 @@ package javainternship.uzduotis.Controllers;
 
 import javainternship.uzduotis.Objects.Book;
 import javainternship.uzduotis.services.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 public class BookController {
 
     public static final String BASE_URL = "/api/books";
+    @Autowired
     private final BookService bookService;
 
     public BookController(BookService bookService) {

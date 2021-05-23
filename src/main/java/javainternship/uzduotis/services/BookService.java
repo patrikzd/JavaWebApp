@@ -1,6 +1,7 @@
 package javainternship.uzduotis.services;
 
 import javainternship.uzduotis.Objects.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

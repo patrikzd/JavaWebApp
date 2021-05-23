@@ -12,6 +12,15 @@ public class User {
     private String name;
     private int booksTaken;
 
+    public User(Long id, String name, int booksTaken) {
+        this.id = id;
+        this.name = name;
+        this.booksTaken = booksTaken;
+    }
+
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }

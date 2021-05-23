@@ -24,6 +24,22 @@ public class Book {
     private int daysTaken;
     private long takenUserId;
 
+    public Book(Long guid, String name, String category, String language, String publicationDate, int isbn, String status, String author, int daysTaken, long takenUserId) {
+        this.guid = guid;
+        this.name = name;
+        this.category = category;
+        this.language = language;
+        this.publicationDate = publicationDate;
+        this.isbn = isbn;
+        this.status = status;
+        this.author = author;
+        this.daysTaken = daysTaken;
+        this.takenUserId = takenUserId;
+    }
+
+    public Book() {
+    }
+
     public int getDaysTaken() {
         return daysTaken;
     }

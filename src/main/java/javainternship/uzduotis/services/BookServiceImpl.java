@@ -1,5 +1,6 @@
 package javainternship.uzduotis.services;
 
+import javainternship.uzduotis.Files.WritingBooks;
 import javainternship.uzduotis.Objects.Book;
 import javainternship.uzduotis.Repositories.BookRepository;
 import org.springframework.stereotype.Service;
@@ -74,11 +75,17 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book addBook(Book book) {
-        return bookRepository.save(book);
+
+        bookRepository.save(book);
+        WritingBooks writing= new WritingBooks(bookRepository);
+        writing.writingToFileBooks();
+        return book;
     }
 
     @Override
     public void deleteBook(Book book) {
         bookRepository.delete(book);
+        WritingBooks writing= new WritingBooks(bookRepository);
+        writing.writingToFileBooks();
     }
 }

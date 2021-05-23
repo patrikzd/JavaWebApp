@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.IOException;
+import java.util.EmptyStackException;
 
 @Entity
 public class Book {
@@ -19,6 +21,28 @@ public class Book {
     private int isbn;
     private String status;
     private String author;
+    private int daysTaken;
+    private long takenUserId;
+
+    public int getDaysTaken() {
+        return daysTaken;
+    }
+
+    public long getTakenUserId() {
+        return takenUserId;
+    }
+
+    public void setStatus(int daysTaken, Long id) throws IOException {
+        if (daysTaken<= 60){
+            this.daysTaken = daysTaken;
+            this.status = "Taken";
+            this.takenUserId = id;
+        }
+        else{
+            throw new IOException("You cannot take a book for longer than 3 months");
+        }
+
+    }
 
     public String getAuthor() {
         return author;
